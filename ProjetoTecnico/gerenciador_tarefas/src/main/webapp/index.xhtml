@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.component"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.facelets">
+<h:head>
+    <title>Gerenciador de Tarefas</title>
+</h:head>
+<h:body>
+    <h:form>
+        <p:panel header="Nova Tarefa">
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Título:" />
+                <h:inputText value="#{tarefaBean.tarefa.titulo}" />
+
+                <h:outputLabel value="Descrição:" />
+                <h:inputText value="#{tarefaBean.tarefa.descricao}" />
+
+                <h:outputLabel value="Responsável:" />
+                <h:inputText value="#{tarefaBean.tarefa.responsavel}" />
+
+                <h:outputLabel value="Prioridade:" />
+                <h:selectOneMenu value="#{tarefaBean.tarefa.prioridade}">
+                    <f:selectItem itemValue="Alta" itemLabel="Alta"/>
+                    <f:selectItem itemValue="Média" itemLabel="Média"/>
+                    <f:selectItem itemValue="Baixa" itemLabel="Baixa"/>
+                </h:selectOneMenu>
+
+                <h:outputLabel value="Deadline:" />
+                <h:inputText value="#{tarefaBean.tarefa.deadline}" />
+
+                <p:commandButton value="Salvar" action="#{tarefaBean.salvar}" update="tarefasTable"/>
+            </h:panelGrid>
+        </p:panel>
+
+        <p:dataTable id="tarefasTable" value="#{tarefaBean.listaTarefas}" var="tarefa">
+            <p:column headerText="Título">#{tarefa.titulo}</p:column>
+            <p:column headerText="Responsável">#{tarefa.responsavel}</p:column>
+            <p:column headerText="Prioridade">#{tarefa.prioridade}</p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+</html>
