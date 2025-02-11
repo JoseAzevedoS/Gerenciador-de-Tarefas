@@ -1,5 +1,4 @@
 ---
-
 Gerenciador de Tarefas
 
 Este projeto é um Gerenciador de Tarefas desenvolvido com JavaServer Faces (JSF), Hibernate (JPA) e MySQL. Ele permite criar, listar e gerenciar tarefas de forma simples.
@@ -27,18 +26,15 @@ Maven
 
 Servidor Jetty (para testes)
 
-
 🚀 Como Executar o Projeto
 
 1️⃣ Configurar o Banco de Dados
 
 1. Certifique-se de ter o MySQL instalado e rodando.
 
-
 2. Crie o banco de dados com o seguinte comando:
 
 CREATE DATABASE 20221164010005_sistema_tarefas;
-
 
 3. Atualize as credenciais do banco no arquivo src/main/resources/META-INF/persistence.xml, caso necessário:
 
@@ -117,6 +113,4 @@ mvn clean install -U
 🔹 Implementar autenticação de usuários
 🔹 Melhorar a interface com PrimeFaces
 🔹 Migrar para um servidor de aplicação mais robusto como WildFly
-
-
 ---
